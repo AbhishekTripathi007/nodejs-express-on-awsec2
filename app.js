@@ -1,12 +1,13 @@
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const port = 3000;
+require('dotenv').config();
 
 // Create an Express application
 const app = express();
 
 // Define MongoDB connection URL and database name
-const mongoUrl = 'mongodb+srv://abhishek:BWRJdiO1VxQlePa8@cluster0.5dz3ppp.mongodb.net/'; // Replace with your MongoDB URL
+const mongoUrl = process.env.MONGODB_URI; // Replace with your MongoDB URL
 const dbName = 'blog'; // Replace with your database name
 
 // Middleware to parse JSON request bodies
